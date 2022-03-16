@@ -1,0 +1,2 @@
+org.keycloak.telekom.readonly.PropertyFileUserStorageProviderFactory
+org.keycloak.telekom.writeable.PropertyFileUserStorageProviderFactory
