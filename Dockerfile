@@ -2,7 +2,7 @@ FROM maven:3.5-jdk-8 as BUILD1
  
 COPY ./user-storage-telekom/src /usr/src/app/src
 COPY ./user-storage-telekom/pom.xml /usr/src/app
-RUN mvn -fXe /usr/src/app/pom.xml clean package
+RUN mvn -ef /usr/src/app/pom.xml clean package
 
 FROM registry.redhat.io/rh-sso-7/sso75-openshift-rhel8:latest
 
