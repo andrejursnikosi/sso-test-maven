@@ -1,4 +1,4 @@
-FROM maven:3.5-jdk-8 as BUILD1
+FROM maven:3.8.4-jdk-11 as BUILD1
  
 COPY ./user-storage-telekom/src /usr/src/app/src
 COPY ./user-storage-telekom/pom.xml /usr/src/app
