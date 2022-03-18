@@ -1,0 +1,44 @@
+﻿          env:
+            - name: SSO_HOSTNAME
+              value: telekom-sso
+            - name: DB_JNDI
+              value: 'java:jboss/datasources/KeycloakDS'
+            - name: DB_MIN_POOL_SIZE
+            - name: DB_MAX_POOL_SIZE
+            - name: DB_TX_ISOLATION
+            - name: JGROUPS_PING_PROTOCOL
+              value: openshift.DNS_PING
+            - name: OPENSHIFT_DNS_PING_SERVICE_NAME
+              value: sso-ping
+            - name: OPENSHIFT_DNS_PING_SERVICE_PORT
+              value: '8888'
+            - name: X509_CA_BUNDLE
+              value: >-
+                /var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt
+                /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+            - name: JGROUPS_CLUSTER_PASSWORD
+              value: bKtkudk53144LPSc7JsjumnCKbixVASd
+            - name: SSO_ADMIN_USERNAME
+              value: admin
+            - name: SSO_ADMIN_PASSWORD
+              value: admin
+            - name: SSO_REALM
+              value: telekom-realm
+            - name: SSO_SERVICE_USERNAME
+              value: sso-service-user
+            - name: SSO_SERVICE_PASSWORD
+              value: sso-service-user
+            - name: ORACLE_DRIVER_FILE_NAME
+              value: ojdbc8.jar
+            - name: ORACLE_SERVICE_HOST
+              value: 172.28.44.10
+            - name: ORACLE_SERVICE_PORT
+              value: '1521'
+            - name: ORACLE_SERVICE_HOST_2
+            - name: ORACLE_SERVICE_PORT_2
+            - name: ORACLE_SERVICE_NAME
+              value: XE
+            - name: ORACLE_USERNAME
+              value: rhsso
+            - name: ORACLE_PASSWORD
+              value: rhsso
