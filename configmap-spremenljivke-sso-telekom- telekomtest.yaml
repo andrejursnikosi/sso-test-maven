@@ -1,0 +1,59 @@
+﻿kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: spremenljivke-sso-telekom
+  namespace: andrejtest
+  uid: d49d2cc2-90f2-4258-8d08-590ee58b2dad
+  resourceVersion: '15922290'
+  creationTimestamp: '2022-03-18T11:40:34Z'
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: v1
+      time: '2022-03-22T10:46:23Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:data':
+          .: {}
+          'f:DB_JNDI': {}
+          'f:DB_MAX_POOL_SIZE': {}
+          'f:DB_MIN_POOL_SIZE': {}
+          'f:DB_TX_ISOLATION': {}
+          'f:JGROUPS_CLUSTER_PASSWORD': {}
+          'f:JGROUPS_PING_PROTOCOL': {}
+          'f:OPENSHIFT_DNS_PING_SERVICE_NAME': {}
+          'f:OPENSHIFT_DNS_PING_SERVICE_PORT': {}
+          'f:ORACLE_CONNECTION_URL': {}
+          'f:ORACLE_DRIVER_FILE_NAME': {}
+          'f:ORACLE_PASSWORD': {}
+          'f:ORACLE_USERNAME': {}
+          'f:SSO_ADMIN_PASSWORD': {}
+          'f:SSO_ADMIN_USERNAME': {}
+          'f:SSO_HOSTNAME': {}
+          'f:SSO_REALM': {}
+          'f:SSO_SERVICE_PASSWORD': {}
+          'f:SSO_SERVICE_USERNAME': {}
+          'f:X509_CA_BUNDLE': {}
+data:
+  DB_JNDI: 'java:jboss/datasources/KeycloakDS'
+  DB_MAX_POOL_SIZE: ''
+  DB_MIN_POOL_SIZE: ''
+  DB_TX_ISOLATION: ''
+  JGROUPS_CLUSTER_PASSWORD: bKtkudk53144LPSc7JsjumnCKbixVASd
+  JGROUPS_PING_PROTOCOL: openshift.DNS_PING
+  OPENSHIFT_DNS_PING_SERVICE_NAME: sso-ping
+  OPENSHIFT_DNS_PING_SERVICE_PORT: '8888'
+  ORACLE_CONNECTION_URL: >-
+    jdbc:oracle:thin:@(DESCRIPTION=(FAILOVER=on)(ADDRESS=(PROTOCOL=TCP)(HOST=dbm04-scan.ts.telekom.si)(PORT=1521))(CONNECT_DATA=(FAILOVER_MODE=(TYPE=select)(METHOD=basic))(SERVER=dedicated)(SERVICE_NAME=bsssb1.ts.telekom.si)))
+  ORACLE_DRIVER_FILE_NAME: ojdbc8.jar
+  ORACLE_PASSWORD: rhsso
+  ORACLE_USERNAME: rhsso
+  SSO_ADMIN_PASSWORD: admin
+  SSO_ADMIN_USERNAME: admin
+  SSO_HOSTNAME: telekom-sso
+  SSO_REALM: telekom-realm
+  SSO_SERVICE_PASSWORD: sso-service-user
+  SSO_SERVICE_USERNAME: sso-service-user
+  X509_CA_BUNDLE: >-
+    /var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt
+    /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
