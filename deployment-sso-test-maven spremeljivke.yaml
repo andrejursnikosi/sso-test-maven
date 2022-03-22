@@ -1,4 +1,4 @@
-﻿          env:
+﻿env:
             - name: SSO_HOSTNAME
               value: telekom-sso
             - name: DB_JNDI
@@ -30,15 +30,10 @@
               value: sso-service-user
             - name: ORACLE_DRIVER_FILE_NAME
               value: ojdbc8.jar
-            - name: ORACLE_SERVICE_HOST
-              value: 172.28.44.10
-            - name: ORACLE_SERVICE_PORT
-              value: '1521'
-            - name: ORACLE_SERVICE_HOST_2
-            - name: ORACLE_SERVICE_PORT_2
-            - name: ORACLE_SERVICE_NAME
-              value: XE
             - name: ORACLE_USERNAME
               value: rhsso
             - name: ORACLE_PASSWORD
               value: rhsso
+            - name: ORACLE_CONNECTION_URL
+              value: >-
+                jdbc:oracle:thin:@(DESCRIPTION=(LOAD_BALANCE=on)(ADDRESS=(PROTOCOL=TCP)(HOST=172.28.44.10)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST="")(PORT=""))(CONNECT_DATA=(SERVICE_NAME=XE)))
