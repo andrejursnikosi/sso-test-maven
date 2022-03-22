@@ -7,6 +7,6 @@ module add --name=com.oracle --resources="/opt/eap/extensions/${env.ORACLE_DRIVE
 # Remove default Datasource
 /subsystem=datasources/data-source=KeycloakDS:remove()
 # Add Oracle Datasource
-/subsystem=datasources/data-source=KeycloakDS:add(jndi-name=java:jboss/datasources/KeycloakDS,enabled=true,use-java-context=true,connection-url="jdbc\:oracle\:thin\:@(DESCRIPTION\=(LOAD_BALANCE\=on)(ADDRESS\=(PROTOCOL\=TCP)(HOST\=${env.ORACLE_SERVICE_HOST})(PORT\=${env.ORACLE_SERVICE_PORT}))(ADDRESS\=(PROTOCOL\=TCP)(HOST\=${env.ORACLE_SERVICE_HOST_2})(PORT\=${env.ORACLE_SERVICE_PORT_2}))(CONNECT_DATA\=(SERVICE_NAME\=${env.ORACLE_SERVICE_NAME})))",driver-name=oracle,user-name=${env.ORACLE_USERNAME},password=${env.ORACLE_PASSWORD})
+/subsystem=datasources/data-source=KeycloakDS:add(jndi-name=java:jboss/datasources/KeycloakDS,enabled=true,use-java-context=true,connection-url=${env.ORACLE_CONNECTION_URL},driver-name=oracle,user-name=${env.ORACLE_USERNAME},password=${env.ORACLE_PASSWORD})
 run-batch
 quit
