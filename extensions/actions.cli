@@ -8,6 +8,12 @@ module add --name=com.oracle --resources="/opt/eap/extensions/${env.ORACLE_DRIVE
 /subsystem=datasources/data-source=KeycloakDS:remove()
 # Add Oracle Datasource
 /subsystem=datasources/data-source=KeycloakDS:add(jndi-name=java:jboss/datasources/KeycloakDS,enabled=true,use-java-context=true,connection-url=${env.ORACLE_CONNECTION_URL},driver-name=oracle,user-name=${env.ORACLE_USERNAME},password=${env.ORACLE_PASSWORD})
+
+#prilagoditev connectionsJpa za bazo
+/subsystem=keycloak-server/spi=connectionsJpa/provider=default/:map-put(name=properties,key=initializeEmpty,value="false")
+/subsystem=keycloak-server/spi=connectionsJpa/provider=default/:map-put(name=properties,key=migrationStrategy,value="manual")
+/subsystem=keycloak-server/spi=connectionsJpa/provider=default/:map-put(name=properties,key=migrationExport,value="${jboss.home.dir}/telekomsso-database-update.sql")
+
 run-batch
 quit
 
