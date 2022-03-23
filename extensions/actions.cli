@@ -10,3 +10,8 @@ module add --name=com.oracle --resources="/opt/eap/extensions/${env.ORACLE_DRIVE
 /subsystem=datasources/data-source=KeycloakDS:add(jndi-name=java:jboss/datasources/KeycloakDS,enabled=true,use-java-context=true,connection-url=${env.ORACLE_CONNECTION_URL},driver-name=oracle,user-name=${env.ORACLE_USERNAME},password=${env.ORACLE_PASSWORD})
 run-batch
 quit
+
+
+
+
+
