@@ -13,6 +13,6 @@ COPY --from=BUILD1 /usr/src/app/target/keycloak-user-storage-telekom-7.4.0.GA.ja
 USER root
 RUN chmod 774 /opt/eap/extensions/*.sh
 USER jboss
-CMD ["/opt/eap/bin/openshift-launch.sh"]
-#CMD ["/bin/bash"]
+#CMD ["/opt/eap/bin/openshift-launch.sh"]
+CMD ["/bin/bash"]
 
